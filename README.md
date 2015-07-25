@@ -1,6 +1,8 @@
 # shimThis.js
 a simple jQuery plugin to "Shim" an element onto another.
 
+![preview of shimThis in action](screenshots/shimThis.jpg)
+
 ### Settings
 
 ontop: _element to be shimmed on_
