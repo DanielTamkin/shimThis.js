@@ -1,5 +1,5 @@
 /*shimThis.js - by Danieltamkin*/
-/*shim an element ontop of its element*/
+/*shim an element ontop of another element*/
 (function( $ ) {
 	$.fn.shimThis = function($data) {
 		$this = $(this);
@@ -33,14 +33,13 @@
 					$data.offset = "25%";
 					$data.offset = $data.offset+"px";
 				}
-				console.log("elementHeight="+elementHeight);
-				console.log("ontopHeight="+ontopHeight);
 				$ontop = $($data.ontop);
 				$this.css("z-index","999");
 				$this.css("margin-top","-"+$data.offset);
+				console.log("shimThis: Calculation Complete");
 			}
 			else{
-				console.log("shimThis Error: no ontop element to calculate.");
+				console.log("shimThis: Error no ontop element to calculate.");
 			}
 		}
 		return this.each(function() {
