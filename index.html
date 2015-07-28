@@ -1,0 +1,133 @@
+<!doctype html>
+<html>
+<head>
+  <title>shimThis.js - shim an element onto another</title>
+  <link rel="stylesheet" type="text/css" href="reset.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="centerThis.js"></script>
+  <script type="text/javascript" src="shimThis.js"></script>
+  <style>
+    header.site{
+      min-height:100px;
+  		max-height:500px;
+  		height:90%;
+  		width:100%;
+      position:relative;
+      background:#424242;
+      color:#fff;
+      display:inline-block;
+    }
+    header.site .wrapper{
+      display:inline-block;
+      text-align:center;
+    }
+    header.site .wrapper h1{
+      font-size:4em;
+      font-family:'Lato', sans-serif;
+      font-weight:900;
+    }
+    header.site .wrapper p{
+      margin-top:9px;
+      font-family:'Raleway', sans-serif;
+    }
+    header.site .wrapper p.download{
+      color:rgba(84, 212, 89, 0.97);
+    }
+    /*footer*/
+    footer.site{
+      margin:1em 0em;
+      text-align:center;
+      color:rgba(181, 181, 181, 0.6);
+    }
+    /*shim*/
+    section.shim{
+      margin-bottom:4em;
+      position:relative;
+      background:#fff;
+      z-index:999;
+    }
+    section.shim article{
+      height:180px;
+      box-sizing:border-box;
+    }
+    section.shim article .image{
+      height:180px;
+      width:25%;
+      float:left;
+      background:#838080;
+    }
+    section.shim article.light .image{
+      background:#959393;
+    }
+    section.shim article .body{
+      padding:0.8em 0.9em;
+      width:60%;
+      float:left;
+      font-family:'Raleway';
+    }
+    section.shim article .body h1{
+      margin-bottom:6px;
+      font-family:'Lato';
+      font-weight:700;
+    }
+    section.shim article .button{
+      height:180px;
+      width:10%;
+      float:right;
+      position:relative;
+      text-align:center;
+    }
+    section.shim article .button p{
+      display:inline-block;
+      font-family:'Lato';
+      font-weight:700;
+      font-style:italic;
+    }
+  </style>
+</head>
+<body>
+<header class="site">
+  <div class="wrapper">
+    <h1>shimThis.js</h1>
+    <p>shim an element onto another.</p>
+    <a href="https://github.com/DanielTamkin/shimThis.js"><p class="download">download</p></a>
+  </div>
+</header>
+<section class="shim Container-Medium">
+  <div class="">
+    <article>
+      <section class="image"></section>
+      <section class="body">
+        <h1>Post title</h1>
+        <p>Twee Vice trust fund, meggings Tumblr artisan sustainable chia. Next level locavore ugh blog cornhole keytar gastropub church-key, sriracha pickled 3 wolf moon. Shoreditch cliche chillwave direct trade, ethical squid gentrify brunch keffiyeh butcher gastropub Helvetica Brooklyn cornhole four loko. Bitters swag </p>
+      </section>
+      <section class="button">
+        <p>read</p>
+      </section>
+    </article>
+    <article class="light">
+      <section class="image"></section>
+      <section class="body">
+        <h1>Post title</h1>
+        <p>Twee Vice trust fund, meggings Tumblr artisan sustainable chia. Next level locavore ugh blog cornhole keytar gastropub church-key, sriracha pickled 3 wolf moon. Shoreditch cliche chillwave direct trade, ethical squid gentrify brunch keffiyeh butcher gastropub Helvetica Brooklyn cornhole four loko. Bitters swag </p>
+      </section>
+      <section class="button">
+        <p>read</p>
+      </section>
+    </article>
+  </div>
+</section>
+<footer class="site">
+  by <a href="http://danieltamkin.com">danieltamkin</a>
+</footer>
+<script>
+  $("header.site .wrapper").centerThis();
+  $("section.button p").centerThis();
+  $offset = $("section.shim article").first().outerHeight()/2;
+  $("section.shim").shimThis({
+    ontop: 'header.site',
+    offset: $offset+'px'
+  });
+</script>
+</body>
+</html>
