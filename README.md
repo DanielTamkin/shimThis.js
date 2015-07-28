@@ -7,8 +7,8 @@ a simple jQuery plugin to "Shim" an element onto another.
 
 ontop: _element to be shimmed on_
 ```
-$("#site-shim").shimThis({
-  ontop: 'section.hero',
+$("section.shim").shimThis({
+  ontop: 'header.site',
 });
 ```
 offset: _offset of shim_
@@ -21,9 +21,9 @@ $("#site-shim").shimThis({
 _can be combined_
 ```
 <script>
-  $offset = $("section.body").outerHeight();
-  $("#site-shim").shimThis({
-    ontop: 'section.hero',
+  $offset = $("section.shim article").first().outerHeight()/2;
+  $("section.shim").shimThis({
+    ontop: 'header.site',
     offset: $offset+'px'
   });
 </script>
