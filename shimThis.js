@@ -31,7 +31,6 @@
 						elementShim 			= 0;
 			  if($data.offset == "0"){
 					$data.offset = "25%";
-					$data.offset = $data.offset+"px";
 				}
 				$ontop = $($data.ontop);
 				$this.css("z-index","999");
