@@ -18,7 +18,7 @@ $("#site-shim").shimThis({
 });
 ```
 
-_can Also be combined_
+_can be combined_
 ```
 <script>
   $offset = $("section.shim article").first().outerHeight()/2;
